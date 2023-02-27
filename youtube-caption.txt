@@ -1,158 +1,158 @@
 0:00:00.000,0:01:00.000
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>&omega;Engine</title>
-    <link rel="icon" href="favicon.png"/>
-    <meta name="keywords" content="&omega;Engine"/>
-    <meta name="description" content="Modding Engine"/>
-    <meta name="image" content="https:/jwklong.github.io/omega-engine/cover.png"/>
-    <meta name="theme-color" content="#ffa600"/>
-    <meta name="og:title" content="&omega;Engine"/>
-    <meta name="og:type" content="website"/>
-    <meta name="og:description" content="Modding Engine"/>
-    <meta name="og:image" content="https:/jwklong.github.io/omega-engine/cover.png"/>
-    <link rel="stylesheet" href="css/main.css"/>
-    <link id="theme" rel="stylesheet" href="css/themes/dark.css"/>
-    <link id="font" rel="stylesheet" href="css/fonts/typespace.css"/>
-</head>
-<body>
-<div id="loading">
-    <h2><span class="omega">&omega;</span> E n g i n e</h2>
-    <p>Starting engine...</p>
-</div>
-<div id="app">
-    <header>
-        <nav>
-            <div>
-                <h2 id="superImportantTitle"><span class="omega">ω</span>Engine</h2>
-                <button @click="settings.tab = 'Layers'"><img alt="L" class="inline" src="images/layers.svg"/> Layers</button>
-                <button @click="settings.tab = 'Achievements'"><img alt="A" class="inline" src="images/star.svg"/> Achievements</button>
-                <button @click="settings.tab = 'Guide'"><img alt="G" class="inline" src="images/information-circle.svg"/> Guide</button>
-                <button @click="settings.tab = 'Settings'"><img alt="S" class="inline" src="images/settings.svg"/> Settings</button>
-            </div>
-            <div>
-                <layer-locked-button id="automatorButton" v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Automators'" :layerid="1"><img alt="Au" class="inline" src="images/hardware-chip.svg"/> Automators</layer-locked-button>
-                <layer-locked-button id="volatilityButton" v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Volatility'" :layerid="2"><img alt="V" class="inline" src="images/save.svg"/> Volatility</layer-locked-button>
-                <layer-locked-button id="alephButton" v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Aleph'" :layerid="3"><span class="aleph">ℵ</span> Aleph</layer-locked-button>
-                <layer-locked-button id="restackButton" v-if="isLayerCategory === 'Layers'" @click="settings.tab = 'ReStack'" :layerid="9"><img alt="R" class="inline" src="images/layercoin.svg"/> ReStack</layer-locked-button>
-                <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Changelog'"><img style="filter: none" alt="C" class="inline" src="favicon.png"> Changelog</button>
-                <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Engine Changelog'"><img style="filter: none" alt="EC" class="inline" src="https://jwklong.github.io/omega-engine/favicon.png"> Engine Changelog</button>
-                <button v-if="isLayerCategory === 'Achievements' && secretAchUnlock" @click="settings.tab = 'Secret Achievements'"><img alt="Sa" class="inline" src="images/star.svg"> Secret Achievements</button>
-                <button id="debugButton" v-if="isLayerCategory === 'Settings' && isDebug" @click="settings.tab = 'Debug'"><img alt="S" class="inline" src="images/settings.svg"/> Debug</button>
-            </div>
-        </nav>
-        <news-ticker v-if="settings.newsTicker"></news-ticker>
-        <layer-navigation v-if="settings.tab === 'Layers' && !isMeta" :layers="layers"></layer-navigation>
-    </header>
-    <main>
-        <notification-container :notifications="notifications"></notification-container>
-        <div v-if="settings.tab === 'Layers'">
-            <prestige-layer v-if="!isMeta" :layer="currentLayer"></prestige-layer>
-            <meta-layer v-else></meta-layer>
-        </div>
-        <settings-menu v-if="settings.tab === 'Settings'"></settings-menu>
-        <volatility-tab v-if="settings.tab === 'Volatility'"></volatility-tab>
-        <achievement-tab v-if="settings.tab === 'Achievements'"></achievement-tab>
-        <secret-achievement-tab v-if="settings.tab === 'Secret Achievements'"></secret-achievement-tab>
-        <automator-tab v-if="settings.tab === 'Automators'"></automator-tab>
-        <aleph-layer v-if="settings.tab === 'Aleph'"></aleph-layer>
-        <restack-tab v-if="settings.tab === 'ReStack'"></restack-tab>
-        <guide-tab v-if="settings.tab === 'Guide'"></guide-tab>
-        <changelog-tab v-if="settings.tab === 'Changelog'"></changelog-tab>
-        <engine-tab v-if="settings.tab === 'Engine Changelog'"></engine-tab>
-        <debug-tab v-if="settings.tab === 'Debug'"></debug-tab>
-        <endgame-tab v-if="settings.tab === 'Endgame'"></endgame-tab>
-    </main>
-    <footer>
-        <div>
-            <a href="https://veprogames.github.io/omega-layers" target="_blank">Original Game</a>
-            <a href="https://github.com/jwklong/omega-engine" target="_blank">Source Code</a>
-            <a href="https://discord.gg/xF9KYsYsMA" target="_blank">Community Server</a>
-        </div>
-    </footer>
-</div>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.flat"></script>
-<script src="js/break_eternity.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@antimatter-dimensions/notations@1.6.0"></script>
-<!-- development version, includes helpful console warnings -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<!-- production version, optimized for size and speed -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
-<script>
+I!DOCTYPE htmlI
+Ihtml lang="en"I
+IheadI
+    Imeta charset="UTF-8"/I
+    ItitleI&omega;EngineI/titleI
+    Ilink rel="icon" href="favicon.png"/I
+    Imeta name="keywords" content="&omega;Engine"/I
+    Imeta name="description" content="Modding Engine"/I
+    Imeta name="image" content="https:/jwklong.github.io/omega-engine/cover.png"/I
+    Imeta name="theme-color" content="#ffa600"/I
+    Imeta name="og:title" content="&omega;Engine"/I
+    Imeta name="og:type" content="website"/I
+    Imeta name="og:description" content="Modding Engine"/I
+    Imeta name="og:image" content="https:/jwklong.github.io/omega-engine/cover.png"/I
+    Ilink rel="stylesheet" href="css/main.css"/I
+    Ilink id="theme" rel="stylesheet" href="css/themes/dark.css"/I
+    Ilink id="font" rel="stylesheet" href="css/fonts/typespace.css"/I
+I/headI
+IbodyI
+Idiv id="loading"I
+    Ih2IIspan class="omega"I&omega;I/spanI E n g i n eI/h2I
+    IpIStarting engine...I/pI
+I/divI
+Idiv id="app"I
+    IheaderI
+        InavI
+            IdivI
+                Ih2 id="superImportantTitle"IIspan class="omega"IωI/spanIEngineI/h2I
+                Ibutton @click="settings.tab = 'Layers'"IIimg alt="L" class="inline" src="images/layers.svg"/I LayersI/buttonI
+                Ibutton @click="settings.tab = 'Achievements'"IIimg alt="A" class="inline" src="images/star.svg"/I AchievementsI/buttonI
+                Ibutton @click="settings.tab = 'Guide'"IIimg alt="G" class="inline" src="images/information-circle.svg"/I GuideI/buttonI
+                Ibutton @click="settings.tab = 'Settings'"IIimg alt="S" class="inline" src="images/settings.svg"/I SettingsI/buttonI
+            I/divI
+            IdivI
+                Ilayer-locked-button id="automatorButton" v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Automators'" :layerid="1"IIimg alt="Au" class="inline" src="images/hardware-chip.svg"/I AutomatorsI/layer-locked-buttonI
+                Ilayer-locked-button id="volatilityButton" v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Volatility'" :layerid="2"IIimg alt="V" class="inline" src="images/save.svg"/I VolatilityI/layer-locked-buttonI
+                Ilayer-locked-button id="alephButton" v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Aleph'" :layerid="3"IIspan class="aleph"IℵI/spanI AlephI/layer-locked-buttonI
+                Ilayer-locked-button id="restackButton" v-if="isLayerCategory === 'Layers'" @click="settings.tab = 'ReStack'" :layerid="9"IIimg alt="R" class="inline" src="images/layercoin.svg"/I ReStackI/layer-locked-buttonI
+                Ibutton v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Changelog'"IIimg style="filter: none" alt="C" class="inline" src="favicon.png"I ChangelogI/buttonI
+                Ibutton v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Engine Changelog'"IIimg style="filter: none" alt="EC" class="inline" src="https://jwklong.github.io/omega-engine/favicon.png"I Engine ChangelogI/buttonI
+                Ibutton v-if="isLayerCategory === 'Achievements' && secretAchUnlock" @click="settings.tab = 'Secret Achievements'"IIimg alt="Sa" class="inline" src="images/star.svg"I Secret AchievementsI/buttonI
+                Ibutton id="debugButton" v-if="isLayerCategory === 'Settings' && isDebug" @click="settings.tab = 'Debug'"IIimg alt="S" class="inline" src="images/settings.svg"/I DebugI/buttonI
+            I/divI
+        I/navI
+        Inews-ticker v-if="settings.newsTicker"II/news-tickerI
+        Ilayer-navigation v-if="settings.tab === 'Layers' && !isMeta" :layers="layers"II/layer-navigationI
+    I/headerI
+    ImainI
+        Inotification-container :notifications="notifications"II/notification-containerI
+        Idiv v-if="settings.tab === 'Layers'"I
+            Iprestige-layer v-if="!isMeta" :layer="currentLayer"II/prestige-layerI
+            Imeta-layer v-elseII/meta-layerI
+        I/divI
+        Isettings-menu v-if="settings.tab === 'Settings'"II/settings-menuI
+        Ivolatility-tab v-if="settings.tab === 'Volatility'"II/volatility-tabI
+        Iachievement-tab v-if="settings.tab === 'Achievements'"II/achievement-tabI
+        Isecret-achievement-tab v-if="settings.tab === 'Secret Achievements'"II/secret-achievement-tabI
+        Iautomator-tab v-if="settings.tab === 'Automators'"II/automator-tabI
+        Ialeph-layer v-if="settings.tab === 'Aleph'"II/aleph-layerI
+        Irestack-tab v-if="settings.tab === 'ReStack'"II/restack-tabI
+        Iguide-tab v-if="settings.tab === 'Guide'"II/guide-tabI
+        Ichangelog-tab v-if="settings.tab === 'Changelog'"II/changelog-tabI
+        Iengine-tab v-if="settings.tab === 'Engine Changelog'"II/engine-tabI
+        Idebug-tab v-if="settings.tab === 'Debug'"II/debug-tabI
+        Iendgame-tab v-if="settings.tab === 'Endgame'"II/endgame-tabI
+    I/mainI
+    IfooterI
+        IdivI
+            Ia href="https://veprogames.github.io/omega-layers" target="_blank"IOriginal GameI/aI
+            Ia href="https://github.com/jwklong/omega-engine" target="_blank"ISource CodeI/aI
+            Ia href="https://discord.gg/xF9KYsYsMA" target="_blank"ICommunity ServerI/aI
+        I/divI
+    I/footerI
+I/divI
+Iscript src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.flat"II/scriptI
+Iscript src="js/break_eternity.min.js"II/scriptI
+Iscript type="text/javascript" src="https://cdn.jsdelivr.net/npm/@antimatter-dimensions/notations@1.6.0"II/scriptI
+I!-- development version, includes helpful console warnings --I
+Iscript src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"II/scriptI
+I!-- production version, optimized for size and speed --I
+I!-- Iscript src="https://cdn.jsdelivr.net/npm/vue@2"II/scriptI --I
+IscriptI
     var LETTERS = "αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ";
     var ORDERS = "ψϝϛͱϻϙͳϸ";
-    var GIANTS = ["Ʊ", "Ʊ<sup>2</sup>","Ʊ<sup>3</sup>","Ʊ<sup>2<sup>2</sup></sup>"]
+    var GIANTS = ["Ʊ", "ƱIsupI2I/supI","ƱIsupI3I/supI","ƱIsupI2IsupI2I/supII/supI"]
     var endgameReq = false
-</script>
-<script src="js/vocabulary.js"></script>
-<script src="js/classes/random.js"></script>
-<script src="js/classes/utils.js"></script>
-<script src="js/classes/featureunlockmanager.js"></script>
-<script src="js/debugclass.js"></script>
-<script src="js/mod.js"></script>
-<script src="js/debug/test.js"></script>
-<script src="js/debug/tabTesting.js"></script>
-<script src="js/debug/debugSaves.js"></script>
-<script src="js/classes/generator.js"></script>
-<script src="js/classes/powergenerator.js"></script>
-<script src="js/classes/upgrade.js"></script>
-<script src="js/classes/challenge.js"></script>
-<script src="js/classes/prestigelayer.js"></script>
-<script src="js/classes/alephlayer.js"></script>
-<script src="js/classes/achievement.js"></script>
-<script src="js/classes/automator.js"></script>
-<script src="js/classes/restacklayer.js"></script>
-<script src="js/classes/metalayer.js"></script>
-<script src="js/classes/notification.js"></script>
-<script src="js/components/layer-colored-text.js"></script>
-<script src="js/components/layer-locked-button.js"></script>
-<script src="js/components/aleph-locked-button.js"></script>
-<script src="js/components/restack-locked-button.js"></script>
-<script src="js/components/generator.js"></script>
-<script src="js/components/generator-table.js"></script>
-<script src="js/components/resource-name.js"></script>
-<script src="js/components/resource-display.js"></script>
-<script src="js/components/upgrade.js"></script>
-<script src="js/components/resource-upgrade.js"></script>
-<script src="js/components/aleph-upgrade.js"></script>
-<script src="js/components/restack-upgrade.js"></script>
-<script src="js/components/dynamic-upgrade.js"></script>
-<script src="js/components/upgrade-container.js"></script>
-<script src="js/components/upgrade-tree.js"></script>
-<script src="js/components/upgrade-tree-arrow.js"></script>
-<script src="js/components/challenge.js"></script>
-<script src="js/components/challenge-table.js"></script>
-<script src="js/components/current-challenge.js"></script>
-<script src="js/components/layer-statistics.js"></script>
-<script src="js/components/prestige-layer.js"></script>
-<script src="js/components/layer-navigation.js"></script>
-<script src="js/components/settings-menu.js"></script>
-<script src="js/components/volatility-tab.js"></script>
-<script src="js/components/aleph-layer.js"></script>
-<script src="js/components/automator.js"></script>
-<script src="js/components/automator-tab.js"></script>
-<script src="js/components/restack-tab.js"></script>
-<script src="js/components/meta-layer.js"></script>
-<script src="js/components/news-ticker.js"></script>
-<script src="js/components/achievement.js"></script>
-<script src="js/components/achievement-tab.js"></script>
-<script src="js/components/secret-achievement-tab.js"></script>
-<script src="js/components/notification.js"></script>
-<script src="js/components/notification-container.js"></script>
-<script src="js/components/guide-item.js"></script>
-<script src="js/components/guide-tab.js"></script>
-<script src="js/components/changelog-tab.js"></script>
-<script src="js/components/engine-tab.js"></script>
-<script src="js/components/debug-tab.js"></script>
-<script src="js/components/endgame-tab.js"></script>
-<script src="js/data/functions.js"></script>
-<script src="js/data/computed.js"></script>
-<script src="js/data/temp.js"></script>
-<script src="js/data/game.js"></script>
-<script src="js/main.js"></script>
-<script>
+I/scriptI
+Iscript src="js/vocabulary.js"II/scriptI
+Iscript src="js/classes/random.js"II/scriptI
+Iscript src="js/classes/utils.js"II/scriptI
+Iscript src="js/classes/featureunlockmanager.js"II/scriptI
+Iscript src="js/debugclass.js"II/scriptI
+Iscript src="js/mod.js"II/scriptI
+Iscript src="js/debug/test.js"II/scriptI
+Iscript src="js/debug/tabTesting.js"II/scriptI
+Iscript src="js/debug/debugSaves.js"II/scriptI
+Iscript src="js/classes/generator.js"II/scriptI
+Iscript src="js/classes/powergenerator.js"II/scriptI
+Iscript src="js/classes/upgrade.js"II/scriptI
+Iscript src="js/classes/challenge.js"II/scriptI
+Iscript src="js/classes/prestigelayer.js"II/scriptI
+Iscript src="js/classes/alephlayer.js"II/scriptI
+Iscript src="js/classes/achievement.js"II/scriptI
+Iscript src="js/classes/automator.js"II/scriptI
+Iscript src="js/classes/restacklayer.js"II/scriptI
+Iscript src="js/classes/metalayer.js"II/scriptI
+Iscript src="js/classes/notification.js"II/scriptI
+Iscript src="js/components/layer-colored-text.js"II/scriptI
+Iscript src="js/components/layer-locked-button.js"II/scriptI
+Iscript src="js/components/aleph-locked-button.js"II/scriptI
+Iscript src="js/components/restack-locked-button.js"II/scriptI
+Iscript src="js/components/generator.js"II/scriptI
+Iscript src="js/components/generator-table.js"II/scriptI
+Iscript src="js/components/resource-name.js"II/scriptI
+Iscript src="js/components/resource-display.js"II/scriptI
+Iscript src="js/components/upgrade.js"II/scriptI
+Iscript src="js/components/resource-upgrade.js"II/scriptI
+Iscript src="js/components/aleph-upgrade.js"II/scriptI
+Iscript src="js/components/restack-upgrade.js"II/scriptI
+Iscript src="js/components/dynamic-upgrade.js"II/scriptI
+Iscript src="js/components/upgrade-container.js"II/scriptI
+Iscript src="js/components/upgrade-tree.js"II/scriptI
+Iscript src="js/components/upgrade-tree-arrow.js"II/scriptI
+Iscript src="js/components/challenge.js"II/scriptI
+Iscript src="js/components/challenge-table.js"II/scriptI
+Iscript src="js/components/current-challenge.js"II/scriptI
+Iscript src="js/components/layer-statistics.js"II/scriptI
+Iscript src="js/components/prestige-layer.js"II/scriptI
+Iscript src="js/components/layer-navigation.js"II/scriptI
+Iscript src="js/components/settings-menu.js"II/scriptI
+Iscript src="js/components/volatility-tab.js"II/scriptI
+Iscript src="js/components/aleph-layer.js"II/scriptI
+Iscript src="js/components/automator.js"II/scriptI
+Iscript src="js/components/automator-tab.js"II/scriptI
+Iscript src="js/components/restack-tab.js"II/scriptI
+Iscript src="js/components/meta-layer.js"II/scriptI
+Iscript src="js/components/news-ticker.js"II/scriptI
+Iscript src="js/components/achievement.js"II/scriptI
+Iscript src="js/components/achievement-tab.js"II/scriptI
+Iscript src="js/components/secret-achievement-tab.js"II/scriptI
+Iscript src="js/components/notification.js"II/scriptI
+Iscript src="js/components/notification-container.js"II/scriptI
+Iscript src="js/components/guide-item.js"II/scriptI
+Iscript src="js/components/guide-tab.js"II/scriptI
+Iscript src="js/components/changelog-tab.js"II/scriptI
+Iscript src="js/components/engine-tab.js"II/scriptI
+Iscript src="js/components/debug-tab.js"II/scriptI
+Iscript src="js/components/endgame-tab.js"II/scriptI
+Iscript src="js/data/functions.js"II/scriptI
+Iscript src="js/data/computed.js"II/scriptI
+Iscript src="js/data/temp.js"II/scriptI
+Iscript src="js/data/game.js"II/scriptI
+Iscript src="js/main.js"II/scriptI
+IscriptI
     var endgameReq = game.metaLayer.layer.gte(mod.Infinities[0])
     setInterval(function() {
         if (endgameReq && !temp.endgameOverride) {
@@ -160,6 +160,6 @@
             temp.endgameOverride = true
         }
     }, 1000/60)
-</script>
-</body>
-</html>
+I/scriptI
+I/bodyI
+I/htmlI
